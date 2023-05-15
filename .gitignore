@@ -1,0 +1,14 @@
+# vscode
+.vscode/
+.clangd/
+compile_commands.json
+
+# c
+*.o
+
+# bin
+simple-mcast
+simple-mcast-static
+
+# log
+logs/
