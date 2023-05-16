@@ -33,7 +33,7 @@ void display_help(char *arg0) {
     printf(" -s, --server      start as a server\n");
     printf(" -a, --addr IPv4   set address (numbers-and-dots notation)\n");
     printf(" -p, --port NUM    set port\n");
-    printf(" -f, --file FILE   upload filepath (required by server)\n");
+    printf(" -f, --file FILE   upload/save filepath\n");
     printf(" -h, --help        display this message and exit\n");
     exit(EXIT_SUCCESS);
 }
@@ -72,5 +72,8 @@ int parse_args(int argc, char *argv[]) {
     }
     mcast_addr.sin_port = htons(port);
     mcast_addr.sin_family = AF_INET;
+    if (is_server && !upload_file[0]) {
+        return fputs("needs", stderr), -1;
+    }
     return 0;
 }
