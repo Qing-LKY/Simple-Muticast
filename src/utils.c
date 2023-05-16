@@ -48,7 +48,7 @@ char* get_content(const char *file, int *len) {
 
 int put_content(const char *file, const char *s, int n) {
     int fd, e;
-    fd = open(file, O_WRONLY | O_CREAT);
+    fd = open(file, O_WRONLY | O_CREAT, 0666);
     if (fd < 0) {
         fprintf(stderr, "Open %s: %s\n", file, strerror(errno));
         return -1;
