@@ -29,7 +29,7 @@ struct option opts[] = {
 char optstr[] = "p:a:q:f:sh";
 
 void display_help(char *arg0) {
-    printf("Usage: %s [-s] [-a 0.0.0.0] [-p 5555] [-f FILE]\n", arg0);
+    printf("Usage: %s [-s] [-a 224.0.0.88] [-p 5555] [-f FILE]\n", arg0);
     printf(" -s, --server      start as a server\n");
     printf(" -a, --addr IPv4   set address (numbers-and-dots notation)\n");
     printf(" -p, --port NUM    set port\n");
@@ -73,7 +73,7 @@ int parse_args(int argc, char *argv[]) {
     mcast_addr.sin_port = htons(port);
     mcast_addr.sin_family = AF_INET;
     if (is_server && !upload_file[0]) {
-        return fputs("needs", stderr), -1;
+        return fputs("needs -f!", stderr), -1;
     }
     return 0;
 }
