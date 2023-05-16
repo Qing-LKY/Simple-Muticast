@@ -19,4 +19,28 @@
 
 ## Usage
 
+```
+Usage: ./simple-mcast [-s] [-a 224.0.0.88] [-p 5555] [-f FILE]
+ -s, --server      start as a server
+ -a, --addr IPv4   set address (numbers-and-dots notation)
+ -p, --port NUM    set port
+ -f, --file FILE   upload/save filepath
+ -h, --help        display this message and exit
+```
+
+服务端:
+
+```bash
+# 多播地址为 224.0.0.88
+# 端口号为 5555 
+# 上传文件为 test.txt
+./simple-mcast -s -a 224.0.0.88 -p 5555 -f test.txt
+```
+
+客户端:
+
+```bash
+./simple-mcast -a 224.0.0.88 -p 5555
+```
+
 ## Notes
