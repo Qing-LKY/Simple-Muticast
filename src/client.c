@@ -56,12 +56,11 @@ void client_main() {
         if (upload_file[0]) {
             e = put_content(upload_file, data, n);
             if (e < 0) exit(EXIT_FAILURE);
-        } else {
-            e = write(STDOUT_FILENO, data, n);
-            if (e < 0) {
-                perror("Standard output");
-                exit(EXIT_FAILURE);
-            }
+        }
+        e = write(STDOUT_FILENO, data, n);
+        if (e < 0) {
+            perror("Standard output");
+            exit(EXIT_FAILURE);
         }
         free(data);
         break;
