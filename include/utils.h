@@ -4,5 +4,6 @@
 int copy_string(char *cnf, const char *arg);
 int copy_number(int *cnf, const char *arg);
 char* get_content(const char *file, int *len);
+int put_content(const char *file, const char *s, int n);
 
 #endif

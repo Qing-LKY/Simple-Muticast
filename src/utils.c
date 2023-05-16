@@ -45,3 +45,19 @@ char* get_content(const char *file, int *len) {
     *len = read(fd, data, s.st_size + 5);
     return data;
 }
+
+int put_content(const char *file, const char *s, int n) {
+    int fd, e;
+    fd = open(file, O_WRONLY | O_CREAT);
+    if (fd < 0) {
+        fprintf(stderr, "Open %s: %s\n", file, strerror(errno));
+        return -1;
+    }
+    e = write(fd, s, n);
+    if (e < 0) {
+        perror("Write to file");
+        return -1;
+    }
+    close(fd);
+    return 0;
+}
