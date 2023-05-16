@@ -28,6 +28,7 @@ void server_main() {
             perror("Send data");
             exit(EXIT_FAILURE);
         }
+        printf("Send message (%d Bytes)\n", n);
         sleep(MCAST_INTERVAL);
     }
 }
