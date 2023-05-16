@@ -1,6 +1,6 @@
 ######################################
 #                                    #
-#    Simple-MCASR Upload Testing     #
+#    Simple-MCAST Upload Testing     #
 #                                    #
 #         By   Qing-LKYi             #
 #                                    #
