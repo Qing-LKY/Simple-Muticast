@@ -1,4 +1,4 @@
-OBJ := main.o args.o utils.o
+OBJ := main.o args.o utils.o client.o server.o
 INCLUDE := $(addprefix ../, $(INCLUDE))
 TARGET := ../$(TARGET)
 CFLAGS += $(patsubst %, -I%, $(INCLUDE))
