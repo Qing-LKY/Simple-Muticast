@@ -8,6 +8,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <sys/socket.h>
+#include <arpa/inet.h>
 
 void client_main() {
     int s, e, loop, n;
@@ -15,7 +16,7 @@ void client_main() {
     socklen_t s_len;
     struct ip_mreq mreq;
     char *data;
-    s = socket(AF_INET, SOCK_DGRAM, PF_UNSPEC);
+    s = socket(AF_INET, SOCK_DGRAM, IPPROTO_IP);
     if (s < 0) {
         perror("Create socket");
         exit(EXIT_FAILURE);

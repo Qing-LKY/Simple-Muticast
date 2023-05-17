@@ -13,7 +13,7 @@
 void server_main() {
     int s, n, siz;
     char *data;
-    s = socket(AF_INET, SOCK_DGRAM, PF_UNSPEC);
+    s = socket(AF_INET, SOCK_DGRAM, IPPROTO_IP);
     if (s == -1) {
         perror("Create socket");
         exit(EXIT_FAILURE);
